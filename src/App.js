@@ -16,7 +16,7 @@ function App({ location }) {
       <select
         className="picker"
         value={location.pathname}
-        onChange={(e) => (window.location.href = "/#" + e.target.value)}>
+        onChange={(e) => (window.location.href = window.location.href.split("#")[0] + "#" + e.target.value)}>
         <option value="/arcgis">ArcGIS (React)</option>
         <option value="/leaflet">Leaflet (React)</option>
         <option value="/leaflet-react">Leaflet (React + leaflet-react package)</option>
