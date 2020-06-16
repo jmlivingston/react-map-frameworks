@@ -1,0 +1,7 @@
+.picker {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 100px);
+  z-index: 999;
+  font-family: Arial, Helvetica, sans-serif;
+}
