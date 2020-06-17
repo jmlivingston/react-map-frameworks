@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 
 const ArcGIS = lazy(() => import("./components/ArcGIS"));
+const ArcGISEsriReact = lazy(() => import("./components/ArcGISEsriReact"));
 const LeafletReact = lazy(() => import("./components/LeafletReact"));
 const Leaflet = lazy(() => import("./components/Leaflet"));
 const MapboxReactMapGl = lazy(() => import("./components/MapboxReactMapGl"));
@@ -18,6 +19,7 @@ function App({ location }) {
         value={location.pathname}
         onChange={(e) => (window.location.href = window.location.href.split("#")[0] + "#" + e.target.value)}>
         <option value="/arcgis">ArcGIS (React)</option>
+        <option value="/arcgis-esri-react">ArcGIS (@esri/react-arcgis)</option>
         <option value="/leaflet">Leaflet (React)</option>
         <option value="/leaflet-react">Leaflet (React + leaflet-react package)</option>
         <option value="/mapbox-react-map-gl">Mapbox (React + react-map-gl)</option>
@@ -28,6 +30,9 @@ function App({ location }) {
         <Switch>
           <Route exact={true} path="/arcgis">
             <ArcGIS />
+          </Route>
+          <Route exact={true} path="/arcgis-esri-react">
+            <ArcGISEsriReact />
           </Route>
           <Route exact={true} path="/leaflet-react">
             <LeafletReact />
